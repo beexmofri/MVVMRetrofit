@@ -1,8 +1,8 @@
 package com.test.mvvmretrofit.repository
 
-import com.test.mvvmretrofit.retorfit.RetrofitService
+import com.test.mvvmretrofit.Movie
+import retrofit2.Response
 
-class MainRepository constructor(private val retrofitService: RetrofitService) {
-
-    fun getAllMovies() = retrofitService.getAllMovies()
+interface MainRepository {
+    suspend fun getAllMovies() : Response<List<Movie>>
 }
